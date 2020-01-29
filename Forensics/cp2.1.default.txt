@@ -1,0 +1,5 @@
+###Solution Example: ###
+#centos
+#7.6
+Puppy Linux
+4.3.1

